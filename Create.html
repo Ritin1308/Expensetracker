@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .formBox {
+            height: 60vh;
+            width: 30vw;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .formHeader {
+            font-size: 2rem;
+            background-color: #333;
+            color: #fff;
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        input {
+            height: 2.5rem;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formBox">
+        <div class="formHeader">Create Your New Task</div>
+        <form action="/CreateExpense" method="post">
+            <div>
+                <label for="expenseName">Enter your Expense Name:</label>
+                <input type="text" id="expenseName" placeholder="Enter Expense Name" name="expenseName" required>
+            </div>
+            <div>
+                <label for="expenseAmount">Enter your Expense Amount:</label>
+                <input type="number" id="expenseAmount" placeholder="Enter Expense Amount" name="expenseAmount" required>
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</body>
+
+</html>

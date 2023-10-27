@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/this.css">
+    <title><%= title %></title>
+</head>
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    td{
+        background-color: #e0dede;
+    }
+</style>
+<body>
+    <nav>
+        <a href="/">HOME</a>
+        <a href="/Create">NEW EXPENSE</a>
+        <br>
+        <br>
+        <br>
+        Total Expenses: 
+        <% 
+            let countExpense=0;
+            expenses.forEach((row,index)=>{
+                countExpense+= row.cost
+            })
+         %>
+        <b><%= countExpense  %></b>
+        <br>
+        <br>
+        <table>
+            <thead style="background-color: rgb(93, 90, 90); color: white;">
+                <tr>
+                    <th>ID</th>
+                    <th>Your Expense Name</th>
+                    <th>Expense Amount</th>
+                    <th>Created-On</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <% expenses.forEach((row,index) => { %>
+                <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= row.expenseName %></td>
+                    <td><%= row.cost  %></td>
+                    <td><%= row.created %></td>
+                    <td><a href="/edit/<%= row._id %>">Update</a></td>
+                    <td><a href="/Delete/<%= row._id %>">Delete</a></td>
+                </tr>
+            <%  })%>
+        </table>
+    </nav>
+</body>
+</html>

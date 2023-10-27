@@ -1,0 +1,12 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+nav{
+    background-color: rebeccapurple;
+}
+.formBox{
+    height: 10vh;
+    width: 10vw;
+    background-color: red;
+}
